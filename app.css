@@ -1,0 +1,325 @@
+:root {
+  --q-border-color: #800060;
+  --q-border-color-light: #800060;
+  
+}
+
+
+
+@font-face {
+font-family: "kongtext";
+src: url("Magg.otf");
+font-size: 60px
+
+}
+
+/* Style the header */
+.header {
+  padding: 5px 5px;
+  background: #800060;
+  color: #800060;  
+}
+
+.body {
+
+}
+/* album cover */
+.album {
+	font-family: "kongtext";
+	/* background-color: grey;*/
+	background-image: url(sky.png);
+	background-size:contain;
+        -webkit-animation: slidein 100s;
+        animation: slidein 100s;
+
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;  
+
+  padding: 1.5rem 2rem;
+  border-color: black;
+  border-style: solid;
+  border-width: 4px;
+  border-image-slice: 3;
+  border-image-width: 3;
+  border-image-repeat: stretch;
+  border-image-outset: 0;
+  border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="8" height="8" xmlns="http://www.w3.org/2000/svg"><path d="M3 1 h1 v1 h-1 z M4 1 h1 v1 h-1 z M2 2 h1 v1 h-1 z M5 2 h1 v1 h-1 z M1 3 h1 v1 h-1 z M6 3 h1 v1 h-1 z M1 4 h1 v1 h-1 z M6 4 h1 v1 h-1 z M2 5 h1 v1 h-1 z M5 5 h1 v1 h-1 z M3 6 h1 v1 h-1 z M4 6 h1 v1 h-1 z" fill="rgb(33,37,41)" /></svg>');
+	}
+
+/* Page content */
+.content {
+  padding: 0px;
+  background: linear-gradient(-60deg, #6cffcc, #7cffdc, #84d1f7, #6387ff, #5d68ff);
+   
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 97%;
+  
+  
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 0px;
+  
+} 
+
+.drag-n-drop-quiz {
+  padding: 0.5rem;
+  box-sizing: content-box;
+  font-family: "kongtext";
+  font-size: 25px;
+  /*background-color: grey; animation needed*/
+  background-image: url(./sky.png);
+  background-size:contain;
+        -webkit-animation: slidein 100s;
+        animation: slidein 100s;
+
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;     
+}
+.drag-n-drop-quiz .question {
+  border-width: 1px;
+  border-style: dotted;
+  border-color: var(--q-border-color);
+  margin-bottom: 1rem;
+  /*background-color: grey;*/
+  
+}
+.drag-n-drop-quiz .question .title {
+  margin: 0.25rem;
+  text-align: center;
+  /*background-color: grey;*/
+}
+.drag-n-drop-quiz .question .btns {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem;
+}
+.drag-n-drop-quiz .question .btns button {
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  
+  animation: glow 1s infinite alternate;
+}
+.drag-n-drop-quiz .question .btns .check-answers {
+  background-color: var(--q-border-color);
+  color: rgb(203, 239, 255);
+  margin-right: 0.75rem;
+  transition: all 300ms ease-in-out;
+}
+.drag-n-drop-quiz .question .btns .check-answers:hover {
+  background-color: var(--q-border-color-light);
+  color: rgb(230, 245, 252);
+}
+/* drags */
+.drag-n-drop-quiz .question .drags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+			/* initial drags */
+.drag-n-drop-quiz .question .drags .drag {
+  min-width: 100px;
+  min-height: 25px;
+  margin: 0.5rem;
+
+  border-width: 1px;
+  border-style: dashed;
+  border-color: black;
+
+  border-radius: 5px;
+  
+   background: linear-gradient(-60deg, 	#e200aa, #f600b8, #ff1ec7,#ff6cda ); 
+   background-size: 400% 400%;
+   animation: gradient 20s ease infinite;
+   
+   font-family: "kongtext";
+}
+            /* initial drags background boxes */         
+.drag-n-drop-quiz .question .drags .drag .item {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: move;
+
+  user-select: none;
+  touch-action: none;
+  
+}
+           /* empty initial drags background boxes & put it back elements */    
+.drag-n-drop-quiz .question .drags .drag.leaving-drag {
+  background-color: gainsboro;
+  color: purple;
+  border-width: 1px;
+  border-style: solid;
+  border-color: grey;
+  animation: glow 1s infinite;
+
+}
+.drag-n-drop-quiz .question .drags .drag.entering-drag {
+  background-color: transparent;
+  color: dark purple;
+  border-width: 1px;
+  border-style: dashed;
+  border-color: grey;
+}
+.drag-n-drop-quiz .question .drags .drag.dragging {
+  background-color: gainsboro;
+  color: purple;
+  border-width: 1px;
+  border-style: solid;
+  border-color: red;
+}
+
+/* drops */
+                /* big box containing the stanzas */
+.drag-n-drop-quiz .question .drops {
+  border-top: 1px solid var(--q-border-color);
+  font-family: "kongtext";
+  flex-wrap: wrap;
+    
+  border-color: black;
+  border-style: solid;
+  border-width: 4px;
+}
+
+               /* small boxes containing the verses */
+.drag-n-drop-quiz .question .drops .drop {
+  max-width: 600px;
+  min-height: 30px;
+  margin: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  border-width: 1.5px;
+  border-style: dashed;
+  border-color: black;
+  
+  display: block; 
+  border-radius: 5px;  
+ 
+  
+ 
+}
+             /* backgroung containing the individual answers */
+.drag-n-drop-quiz .question .drops .drop .item {
+  width: 100%;
+  height: 25%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+
+  cursor: move;
+
+  user-select: none;
+  touch-action: none;
+  
+}
+
+               /* boxes painted after changing the verses */
+.drag-n-drop-quiz .question .drops .drop.leaving-drop {
+  border-width: 2px;
+  border-style: dashed;
+  border-color: black;
+ 
+}
+.drag-n-drop-quiz .question .drops .drop.entering-drop {
+  border-width: 3px;
+  border-color: cornflowerblue;
+  
+  
+}
+.drag-n-drop-quiz .question .drops .drop.dropped {
+  border-width: 3px;
+  border-style: solid;
+  border-color: cornflowerblue;
+  background-color: gainsboro;
+}
+.drag-n-drop-quiz .question .drops .drop.correct {
+  border-color: rgb(38, 144, 38);
+  
+  /*background-color: rgb(131, 228, 131); */
+  
+   background: linear-gradient(-70deg, #ffffff, #99ff99, #66ff66, #33ff33, #00ff00); 
+   background-size: 400% 400%;
+   animation: gradient 2.5s ease infinite;
+ 
+  
+}
+.drag-n-drop-quiz .question .drops .drop.incorrect {
+  border-color: rgb(144, 38, 38);
+  background-color: rgb(228, 131, 131);
+  animation: float 1s ease-in-out infinite;
+  
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-5px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+@keyframes glow{
+  from{text-shadow:0px 0px 5px #fff,0px 0px 5px #614ad3;}
+  to{text-shadow:0px 0px 20px #fff,0px 0px 20px #614ad3;}
+}
+
+
+/*  sky animation   */
+
+
+@-webkit-keyframes slidein {
+from {background-position: top; background-size:3000px; }
+to {background-position: -100px 0px;background-size:2750px;}
+}
+
+@keyframes slidein {
+from {background-position: top;background-size:3000px; }
+to {background-position: -100px 0px;background-size:2750px;}
+
+}

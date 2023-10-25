@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.4" />
+    <title>AFI - Love like winter</title>
+    <link rel="stylesheet" href="./app.css" />
+	
+	 
+  </head>
+<! –– audio control is sticky ––>
+  <body>
+  <div class="header" id="myHeader" style="text-align:center">
+  <audio controls>
+  <source src="Like Winter.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+  </audio>
+  </div>
+
+<! –– album cover ––>
+<div class="album" id="album" style="text-align:center"> 
+   <a href="https://afireinside.net/">
+  <img src="AFI.jpg" alt="The heavy" width="200" height="200" >
+   </a>
+
+<h2>AFI – Love like winter</h2>
+
+
+
+
+</div>
+
+  
+  <div id="drag-n-drop-quiz" ></div>
+    <script>
+      let questions = [];
+      questions[0] = [
+        '',
+        {
+          id: 1,
+          text: 'Warn your warmth to turn away',
+          dragOrder: 2,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'Here, it´s December every day   [ I like that ]  ',
+          dragOrder: 5,
+          dropOrder: 2, // correct order after drop
+        },
+       	{
+          id: 3,
+          text: 'Press your lips to the sculptures',
+          dragOrder: 4,
+          dropOrder: 3, // correct order after drop
+        },
+		{
+          id: 4,
+          text: 'And surely, you´ll stay [ Love like winter ]',
+          dragOrder: 3,	
+          dropOrder: 4, // correct order after drop
+        },
+		{
+          id: 5,
+          text: 'For of sugar and ice ',
+          dragOrder: 6,	
+          dropOrder: 5, // correct order after drop
+        },
+		{
+          id: 6,
+          text: 'I am made, I am made',
+          dragOrder: 1,	
+          dropOrder: 6, // correct order after drop
+        },
+      ];
+       questions[1] = [
+         '',
+        {
+          id: 1,
+          text: 'It´s in the blood',
+          dragOrder: 2,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'It´s in the blood',
+          dragOrder: 5,
+          dropOrder: 2, // correct order after drop
+        },
+       	{
+          id: 3,
+          text: 'I met my love before I was born',
+          dragOrder: 4,
+          dropOrder: 3, // correct order after drop
+        },
+		{
+          id: 4,
+          text: 'He wanted love, I taste of blood',
+          dragOrder: 3,	
+          dropOrder: 4, // correct order after drop
+        },
+		{
+          id: 5,
+          text: 'He bit my lip and drank my war from years before ',
+          dragOrder: 6,	
+          dropOrder: 5, // correct order after drop
+        },
+		
+		];
+		
+	questions[2] = [
+         '',
+        {
+          id: 1,
+          text: 'She exhales vanilla lace',
+          dragOrder: 4,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'I barely dreamt her, yesterday [Yesterday]',
+          dragOrder: 1,
+          dropOrder: 2, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'Read the lines in the mirror through the lipstick trace [¨Por siempre¨]' ,
+          dragOrder: 2,
+          dropOrder: 3, // correct order after drop
+        },
+		{
+		id: 4,
+          text: 'She said, "It seems you´re somewhere far away," to his face',
+          dragOrder: 3,
+          dropOrder: 4, // correct order after drop
+		},
+		];
+		
+		questions[3] = [
+         '',
+        {
+          id: 1,
+          text: 'It´s in the blood',
+          dragOrder: 2,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'It´s in the blood',
+          dragOrder: 5,
+          dropOrder: 2, // correct order after drop
+        },
+       	{
+          id: 3,
+          text: 'I met my love before I was born',
+          dragOrder: 4,
+          dropOrder: 3, // correct order after drop
+        },
+		{
+          id: 4,
+          text: 'She wanted love, I taste of blood',
+          dragOrder: 3,	
+          dropOrder: 4, // correct order after drop
+        },
+		{
+          id: 5,
+          text: 'She bit my lip and drank my war from years before ',
+          dragOrder: 6,	
+          dropOrder: 5, // correct order after drop
+        },
+      ];
+	  questions[4] = [
+        '',
+        {
+          id: 1,
+          text: 'Love like winter, oh-oh, oh-oh',
+          dragOrder: 2,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'Love like winter, winter',
+          dragOrder: 3,
+          dropOrder: 2, // correct order after drop
+        },
+        {
+          id: 3,
+          text: 'Three, four',
+          dragOrder: 1,
+          dropOrder: 3, // correct order after drop
+        },
+      ];
+	 questions[5] = [
+         '',
+        {
+          id: 1,
+          text: 'It´s in the blood',
+          dragOrder: 2,
+          dropOrder: 1, // correct order after drop
+        },
+        {
+          id: 2,
+          text: 'It´s in the blood',
+          dragOrder: 5,
+          dropOrder: 2, // correct order after drop
+        },
+       	{
+          id: 3,
+          text: 'I met my love before I was born',
+          dragOrder: 4,
+          dropOrder: 3, // correct order after drop
+        },
+		{
+          id: 4,
+          text: 'He wanted love, I taste of blood',
+          dragOrder: 3,	
+          dropOrder: 4, // correct order after drop
+        },
+		{
+          id: 5,
+          text: 'He bit my lip and drank my warmth from years before ',
+          dragOrder: 6,	
+          dropOrder: 5, // correct order after drop
+        },
+		{
+          id: 6,
+          text: 'From years before ',
+          dragOrder: 4,	
+          dropOrder: 6, // correct order after drop
+        },     	  
+      ];
+    </script>
+    <script src="./app.js"></script>
+  </body>
+</html>
